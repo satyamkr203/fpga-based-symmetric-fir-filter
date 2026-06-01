@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="symmetricFIR_tb_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="glbl" />
+            <top_module name="symmetricFIR_tb" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0.000 ns"></ZoomStartTime>
+      <ZoomEndTime time="329.546 ns"></ZoomEndTime>
+      <Cursor1Time time="141.098 ns"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="340"></NameColumnWidth>
+      <ValueColumnWidth column_width="140"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="18" />
+   <wvobject fp_name="/symmetricFIR_tb/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/symmetricFIR_tb/clr" type="logic">
+      <obj_property name="ElementShortName">clr</obj_property>
+      <obj_property name="ObjectShortName">clr</obj_property>
+   </wvobject>
+   <wvobject fp_name="/symmetricFIR_tb/load" type="logic">
+      <obj_property name="ElementShortName">load</obj_property>
+      <obj_property name="ObjectShortName">load</obj_property>
+   </wvobject>
+   <wvobject fp_name="/symmetricFIR_tb/coeff_value" type="array">
+      <obj_property name="ElementShortName">coeff_value[7:0]</obj_property>
+      <obj_property name="ObjectShortName">coeff_value[7:0]</obj_property>
+      <obj_property name="WaveformStyle">STYLE_ANALOG</obj_property>
+      <obj_property name="CellHeight">100</obj_property>
+   </wvobject>
+   <wvobject fp_name="/symmetricFIR_tb/noisy_signal" type="array">
+      <obj_property name="ElementShortName">noisy_signal[11:0]</obj_property>
+      <obj_property name="ObjectShortName">noisy_signal[11:0]</obj_property>
+      <obj_property name="WaveformStyle">STYLE_ANALOG</obj_property>
+      <obj_property name="CellHeight">100</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      <obj_property name="CustomSignalColor">#FF0000</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/symmetricFIR_tb/filtered_signal" type="array">
+      <obj_property name="ElementShortName">filtered_signal[24:0]</obj_property>
+      <obj_property name="ObjectShortName">filtered_signal[24:0]</obj_property>
+      <obj_property name="WaveformStyle">STYLE_ANALOG</obj_property>
+      <obj_property name="CellHeight">100</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      <obj_property name="CustomSignalColor">#0000A0</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/symmetricFIR_tb/filtering_process_done" type="logic">
+      <obj_property name="ElementShortName">filtering_process_done</obj_property>
+      <obj_property name="ObjectShortName">filtering_process_done</obj_property>
+   </wvobject>
+   <wvobject fp_name="/symmetricFIR_tb/CLK_PERIOD" type="array">
+      <obj_property name="ElementShortName">CLK_PERIOD[31:0]</obj_property>
+      <obj_property name="ObjectShortName">CLK_PERIOD[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/symmetricFIR_tb/fd_input" type="array">
+      <obj_property name="ElementShortName">fd_input[31:0]</obj_property>
+      <obj_property name="ObjectShortName">fd_input[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/symmetricFIR_tb/fd_coeff" type="array">
+      <obj_property name="ElementShortName">fd_coeff[31:0]</obj_property>
+      <obj_property name="ObjectShortName">fd_coeff[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/symmetricFIR_tb/COEFF_NUM" type="array">
+      <obj_property name="ElementShortName">COEFF_NUM[31:0]</obj_property>
+      <obj_property name="ObjectShortName">COEFF_NUM[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/symmetricFIR_tb/COEFF_WIDTH" type="array">
+      <obj_property name="ElementShortName">COEFF_WIDTH[31:0]</obj_property>
+      <obj_property name="ObjectShortName">COEFF_WIDTH[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/symmetricFIR_tb/DATA_DELAY" type="array">
+      <obj_property name="ElementShortName">DATA_DELAY[31:0]</obj_property>
+      <obj_property name="ObjectShortName">DATA_DELAY[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/symmetricFIR_tb/DATA_WIDTH" type="array">
+      <obj_property name="ElementShortName">DATA_WIDTH[31:0]</obj_property>
+      <obj_property name="ObjectShortName">DATA_WIDTH[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/symmetricFIR_tb/STAGE1_WIDTH" type="array">
+      <obj_property name="ElementShortName">STAGE1_WIDTH[31:0]</obj_property>
+      <obj_property name="ObjectShortName">STAGE1_WIDTH[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/symmetricFIR_tb/STAGE2_WIDTH" type="array">
+      <obj_property name="ElementShortName">STAGE2_WIDTH[31:0]</obj_property>
+      <obj_property name="ObjectShortName">STAGE2_WIDTH[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/symmetricFIR_tb/STAGE3_WIDTH" type="array">
+      <obj_property name="ElementShortName">STAGE3_WIDTH[31:0]</obj_property>
+      <obj_property name="ObjectShortName">STAGE3_WIDTH[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/symmetricFIR_tb/OUTPUT_WIDTH" type="array">
+      <obj_property name="ElementShortName">OUTPUT_WIDTH[31:0]</obj_property>
+      <obj_property name="ObjectShortName">OUTPUT_WIDTH[31:0]</obj_property>
+      <obj_property name="WaveformStyle">STYLE_ANALOG</obj_property>
+      <obj_property name="CellHeight">100</obj_property>
+   </wvobject>
+</wave_config>

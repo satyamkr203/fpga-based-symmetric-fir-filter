@@ -1,0 +1,286 @@
+#-----------------------------------------------------------
+# Vivado v2025.2 (64-bit)
+# SW Build 6299465 on Fri Nov 14 19:35:11 GMT 2025
+# IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
+# SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
+# Start of session at: Sat May 30 19:54:05 2026
+# Process ID         : 14016
+# Current directory  : C:/Users/shova/Desktop/symmetric_FIR_Filter/symmetric_FIR_Filter.runs/synth_1
+# Command line       : vivado.exe -log symmetricFIR.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source symmetricFIR.tcl
+# Log file           : C:/Users/shova/Desktop/symmetric_FIR_Filter/symmetric_FIR_Filter.runs/synth_1/symmetricFIR.vds
+# Journal file       : C:/Users/shova/Desktop/symmetric_FIR_Filter/symmetric_FIR_Filter.runs/synth_1\vivado.jou
+# Running On         : Shobha_devi1234
+# Platform           : Windows Server 2016 or Windows 10
+# Operating System   : 22631
+# Processor Detail   : 11th Gen Intel(R) Core(TM) i3-1115G4 @ 3.00GHz
+# CPU Frequency      : 2995 MHz
+# CPU Physical cores : 2
+# CPU Logical cores  : 4
+# Host memory        : 8216 MB
+# Swap memory        : 10271 MB
+# Total Virtual      : 18487 MB
+# Available Virtual  : 3457 MB
+#-----------------------------------------------------------
+source symmetricFIR.tcl -notrace
+create_project: Time (s): cpu = 00:00:06 ; elapsed = 00:00:11 . Memory (MB): peak = 525.363 ; gain = 219.844
+Command: read_checkpoint -auto_incremental -incremental C:/Users/shova/Desktop/symmetric_FIR_Filter/symmetric_FIR_Filter.srcs/utils_1/imports/synth_1/symmetricFIR.dcp
+INFO: [Vivado 12-5825] Read reference checkpoint from C:/Users/shova/Desktop/symmetric_FIR_Filter/symmetric_FIR_Filter.srcs/utils_1/imports/synth_1/symmetricFIR.dcp for incremental synthesis
+INFO: [Vivado 12-7989] Please ensure there are no constraint changes
+Command: synth_design -top symmetricFIR -part xc7a100tcsg324-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
+INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 18124
+---------------------------------------------------------------------------------
+Starting Synthesize : Time (s): cpu = 00:00:04 ; elapsed = 00:00:12 . Memory (MB): peak = 1069.941 ; gain = 531.547
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'symmetricFIR' [C:/Users/shova/Desktop/symmetric_FIR_Filter/src/symmetricFIR.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'symmetricFIR' (0#1) [C:/Users/shova/Desktop/symmetric_FIR_Filter/src/symmetricFIR.v:6]
+WARNING: [Synth 8-6014] Unused sequential element sum_next_reg was removed.  [C:/Users/shova/Desktop/symmetric_FIR_Filter/src/symmetricFIR.v:133]
+WARNING: [Synth 8-6014] Unused sequential element scaled_next_reg was removed.  [C:/Users/shova/Desktop/symmetric_FIR_Filter/src/symmetricFIR.v:134]
+WARNING: [Synth 8-7137] Register coeff_reg_reg[0] in module symmetricFIR has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/shova/Desktop/symmetric_FIR_Filter/src/symmetricFIR.v:90]
+WARNING: [Synth 8-7137] Register coeff_reg_reg[1] in module symmetricFIR has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/shova/Desktop/symmetric_FIR_Filter/src/symmetricFIR.v:90]
+WARNING: [Synth 8-7137] Register coeff_reg_reg[2] in module symmetricFIR has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/shova/Desktop/symmetric_FIR_Filter/src/symmetricFIR.v:90]
+WARNING: [Synth 8-7137] Register coeff_reg_reg[3] in module symmetricFIR has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/shova/Desktop/symmetric_FIR_Filter/src/symmetricFIR.v:90]
+WARNING: [Synth 8-7137] Register coeff_reg_reg[4] in module symmetricFIR has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/shova/Desktop/symmetric_FIR_Filter/src/symmetricFIR.v:90]
+WARNING: [Synth 8-7137] Register coeff_reg_reg[5] in module symmetricFIR has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/shova/Desktop/symmetric_FIR_Filter/src/symmetricFIR.v:90]
+---------------------------------------------------------------------------------
+Finished Synthesize : Time (s): cpu = 00:00:06 ; elapsed = 00:00:22 . Memory (MB): peak = 1191.477 ; gain = 653.082
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:07 ; elapsed = 00:00:24 . Memory (MB): peak = 1191.477 ; gain = 653.082
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a100tcsg324-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:07 ; elapsed = 00:00:24 . Memory (MB): peak = 1191.477 ; gain = 653.082
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7a100tcsg324-1
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:25 . Memory (MB): peak = 1191.477 ; gain = 653.082
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input   32 Bit       Adders := 2     
+	   6 Input   25 Bit       Adders := 1     
+	   2 Input   25 Bit       Adders := 1     
+	   2 Input   13 Bit       Adders := 6     
+	   2 Input    4 Bit       Adders := 1     
+	   2 Input    3 Bit       Adders := 1     
+	   2 Input    2 Bit       Adders := 1     
++---Registers : 
+	               22 Bit    Registers := 6     
+	               13 Bit    Registers := 6     
+	               12 Bit    Registers := 13    
+	                8 Bit    Registers := 6     
+	                4 Bit    Registers := 1     
+	                3 Bit    Registers := 1     
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 4     
++---Muxes : 
+	   2 Input   32 Bit        Muxes := 1     
+	   2 Input   25 Bit        Muxes := 1     
+	   2 Input   12 Bit        Muxes := 2     
+	   2 Input    3 Bit        Muxes := 1     
+	   2 Input    1 Bit        Muxes := 9     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 240 (col length:80)
+BRAMs: 270 (col length: RAMB18 80 RAMB36 40)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+DSP Report: Generating DSP p_0_out, operation Mode is: A*B.
+DSP Report: operator p_0_out is absorbed into DSP p_0_out.
+DSP Report: Generating DSP p_0_out, operation Mode is: A*B.
+DSP Report: operator p_0_out is absorbed into DSP p_0_out.
+DSP Report: Generating DSP p_0_out, operation Mode is: A*B.
+DSP Report: operator p_0_out is absorbed into DSP p_0_out.
+DSP Report: Generating DSP p_0_out, operation Mode is: A*B.
+DSP Report: operator p_0_out is absorbed into DSP p_0_out.
+DSP Report: Generating DSP p_0_out, operation Mode is: A*B.
+DSP Report: operator p_0_out is absorbed into DSP p_0_out.
+DSP Report: Generating DSP p_0_out, operation Mode is: A*B.
+DSP Report: operator p_0_out is absorbed into DSP p_0_out.
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:15 ; elapsed = 00:00:48 . Memory (MB): peak = 1414.035 ; gain = 875.641
+---------------------------------------------------------------------------------
+ Sort Area is  p_0_out_0 : 0 0 : 682 682 : Used 1 time 0
+ Sort Area is  p_0_out_2 : 0 0 : 682 682 : Used 1 time 0
+ Sort Area is  p_0_out_3 : 0 0 : 682 682 : Used 1 time 0
+ Sort Area is  p_0_out_4 : 0 0 : 682 682 : Used 1 time 0
+ Sort Area is  p_0_out_5 : 0 0 : 682 682 : Used 1 time 0
+ Sort Area is  p_0_out_6 : 0 0 : 682 682 : Used 1 time 0
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+DSP: Preliminary Mapping Report (see note below. The ' indicates corresponding REG is set)
++-------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name  | DSP Mapping | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++-------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|symmetricFIR | A*B         | 13     | 8      | -      | -      | 21     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|symmetricFIR | A*B         | 13     | 8      | -      | -      | 21     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|symmetricFIR | A*B         | 13     | 8      | -      | -      | 21     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|symmetricFIR | A*B         | 13     | 8      | -      | -      | 21     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|symmetricFIR | A*B         | 13     | 8      | -      | -      | 21     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|symmetricFIR | A*B         | 13     | 8      | -      | -      | 21     | 0    | 0    | -    | -    | -     | 0    | 0    | 
++-------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
+Note: The table above is a preliminary report that shows the DSPs inferred at the current stage of the synthesis flow. Some DSP may be reimplemented as non DSP primitives later in the synthesis flow. Multiple instantiated DSPs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:15 ; elapsed = 00:00:49 . Memory (MB): peak = 1418.352 ; gain = 879.957
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:15 ; elapsed = 00:00:49 . Memory (MB): peak = 1418.352 ; gain = 879.957
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:21 ; elapsed = 00:01:03 . Memory (MB): peak = 1636.961 ; gain = 1098.566
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:21 ; elapsed = 00:01:03 . Memory (MB): peak = 1636.961 ; gain = 1098.566
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:21 ; elapsed = 00:01:03 . Memory (MB): peak = 1636.961 ; gain = 1098.566
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:21 ; elapsed = 00:01:03 . Memory (MB): peak = 1636.961 ; gain = 1098.566
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:21 ; elapsed = 00:01:03 . Memory (MB): peak = 1636.961 ; gain = 1098.566
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:21 ; elapsed = 00:01:03 . Memory (MB): peak = 1636.961 ; gain = 1098.566
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+DSP Final Report (the ' indicates corresponding REG is set)
++-------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name  | DSP Mapping | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++-------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|symmetricFIR | (A*B')'     | 30     | 18     | -      | -      | 21     | 0    | 1    | -    | -    | -     | 0    | 1    | 
+|symmetricFIR | (A*B')'     | 30     | 18     | -      | -      | 21     | 0    | 1    | -    | -    | -     | 0    | 1    | 
+|symmetricFIR | (A*B')'     | 30     | 18     | -      | -      | 21     | 0    | 1    | -    | -    | -     | 0    | 1    | 
+|symmetricFIR | (A*B')'     | 30     | 18     | -      | -      | 21     | 0    | 1    | -    | -    | -     | 0    | 1    | 
+|symmetricFIR | (A*B')'     | 30     | 18     | -      | -      | 21     | 0    | 1    | -    | -    | -     | 0    | 1    | 
+|symmetricFIR | (A*B')'     | 30     | 18     | -      | -      | 21     | 0    | 1    | -    | -    | -     | 0    | 1    | 
++-------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+--------+------+
+|      |Cell    |Count |
++------+--------+------+
+|1     |BUFG    |     1|
+|2     |CARRY4  |   133|
+|3     |DSP48E1 |     6|
+|4     |LUT1    |    36|
+|5     |LUT2    |   115|
+|6     |LUT3    |   136|
+|7     |LUT4    |   119|
+|8     |LUT5    |   177|
+|9     |LUT6    |   304|
+|10    |FDCE    |   248|
+|11    |IBUF    |    23|
+|12    |OBUF    |    13|
++------+--------+------+
+
+Report Instance Areas: 
++------+---------+-------+------+
+|      |Instance |Module |Cells |
++------+---------+-------+------+
+|1     |top      |       |  1311|
++------+---------+-------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:21 ; elapsed = 00:01:03 . Memory (MB): peak = 1636.961 ; gain = 1098.566
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 8 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:21 ; elapsed = 00:01:03 . Memory (MB): peak = 1636.961 ; gain = 1098.566
+Synthesis Optimization Complete : Time (s): cpu = 00:00:21 ; elapsed = 00:01:03 . Memory (MB): peak = 1636.961 ; gain = 1098.566
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.027 . Memory (MB): peak = 1651.016 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 139 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+WARNING: [Netlist 29-101] Netlist 'symmetricFIR' is not ideal for floorplanning, since the cellview 'symmetricFIR' contains a large number of primitives.  Please consider enabling hierarchy in synthesis if you want to do floorplanning.
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1764.836 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Synth Design complete | Checksum: 54fbfb7e
+INFO: [Common 17-83] Releasing license: Synthesis
+18 Infos, 9 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:24 ; elapsed = 00:01:13 . Memory (MB): peak = 1764.836 ; gain = 1232.270
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.013 . Memory (MB): peak = 1764.836 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'C:/Users/shova/Desktop/symmetric_FIR_Filter/symmetric_FIR_Filter.runs/synth_1/symmetricFIR.dcp' has been generated.
+INFO: [Vivado 12-24828] Executing command : report_utilization -file symmetricFIR_utilization_synth.rpt -pb symmetricFIR_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Sat May 30 19:55:38 2026...

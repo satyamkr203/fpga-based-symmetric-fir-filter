@@ -1,0 +1,27 @@
+#-----------------------------------------------------------
+# Vivado v2025.2 (64-bit)
+# SW Build 6299465 on Fri Nov 14 19:35:11 GMT 2025
+# IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
+# SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
+# Start of session at: Sat May 30 18:23:58 2026
+# Process ID         : 12136
+# Current directory  : C:/Users/shova/Desktop/symmetric_FIR_Filter
+# Command line       : vivado.exe -gui_launcher_event rodinguilauncherevent14848 C:\Users\shova\Desktop\symmetric_FIR_Filter\symmetric_FIR_Filter.xpr
+# Log file           : C:/Users/shova/Desktop/symmetric_FIR_Filter/vivado.log
+# Journal file       : C:/Users/shova/Desktop/symmetric_FIR_Filter\vivado.jou
+# Running On         : Shobha_devi1234
+# Platform           : Windows Server 2016 or Windows 10
+# Operating System   : 22631
+# Processor Detail   : 11th Gen Intel(R) Core(TM) i3-1115G4 @ 3.00GHz
+# CPU Frequency      : 2995 MHz
+# CPU Physical cores : 2
+# CPU Logical cores  : 4
+# Host memory        : 8216 MB
+# Swap memory        : 9024 MB
+# Total Virtual      : 17240 MB
+# Available Virtual  : 2598 MB
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/shova/Desktop/symmetric_FIR_Filter/symmetric_FIR_Filter.xpr
+update_compile_order -fileset sources_1
+launch_simulation

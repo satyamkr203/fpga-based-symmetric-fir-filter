@@ -1,0 +1,9 @@
+---------------------------------------
+Simulation summary
+Compared samples : 4082
+Maximum abs error: 1673
+Tolerance        : 1
+Total mismatches : 985
+RESULT: FAIL
+----------------------------------------
+$finish called at time : 82400 ns : File "C:/Users/shova/Desktop/symmetric_FIR_Filter/te
