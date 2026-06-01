@@ -1,154 +1,135 @@
-# Design and Verification of a Fixed-Point Symmetric FIR Filter for FPGA-Based Digital Signal Processing
+# FPGA Symmetric FIR Filter
 
-M.Tech thesis-oriented project: Python golden reference, Verilog RTL, Vivado simulation, and self-checking verification.
+A hardware implementation of a 12-tap linear-phase symmetric FIR filter in Verilog HDL with fixed-point arithmetic, Python-based golden reference verification, and Xilinx Vivado simulation.
 
----
+## Overview
 
-## Project Goal
+This project demonstrates the complete FPGA DSP design flow:
 
-Implement a **12-tap linear-phase symmetric FIR low-pass filter** with:
+* FIR filter design
+* Fixed-point arithmetic implementation
+* Verilog RTL development
+* Self-checking verification
+* Vivado simulation
+* FPGA synthesis and implementation analysis
 
-1. Python reference model and test-vector generation
-2. Parameterized Verilog RTL exploiting coefficient symmetry
-3. Fixed-point scaling (`divide by COEFF_SUM = 196`)
-4. Self-checking Vivado testbench against golden output
-5. Documentation and plots suitable for dissertation submission
+The design exploits coefficient symmetry to reduce the number of multipliers by approximately 50%, improving hardware efficiency while preserving linear-phase filtering characteristics.
 
----
+## Features
 
-## Directory Structure
+* 12-tap symmetric FIR architecture
+* Linear-phase response
+* Fixed-point implementation
+* 3-stage pipelined datapath
+* Self-checking Verilog testbench
+* Python golden reference model
+* Automatic PASS/FAIL verification
+* Vivado simulation support
+* Resource utilization analysis
+* Timing and power evaluation
 
-```
-symmetric_FIR_Filter/
-├── README.md                      ← This file
-├── requirements.txt
-├── generate_noisy_signal.py       ← Golden reference + vector export
-├── coeff_val.txt                  ← 6 unique FIR coefficients (decimal)
-├── input_signal.txt               ← Noisy input (12-bit hex)
-├── filtered_signal.txt            ← Golden output (12-bit hex)
-├── sim_config.txt                 ← Simulation metadata
+## Architecture
+
+### Filter Configuration
+
+| Parameter           | Value         |
+| ------------------- | ------------- |
+| Filter Type         | Symmetric FIR |
+| Number of Taps      | 12            |
+| Unique Coefficients | 6             |
+| Input Width         | 12-bit Signed |
+| Coefficient Width   | 8-bit Signed  |
+| Output Width        | 12-bit Signed |
+| Pipeline Stages     | 3             |
+| Clock Frequency     | 100 MHz       |
+
+### Coefficients
+
+Half-kernel:
+
+[2, 14, 7, 28, 15, 32]
+
+Full symmetric impulse response:
+
+[2, 14, 7, 28, 15, 32, 32, 15, 28, 7, 14, 2]
+
+### Optimization
+
+The architecture uses coefficient symmetry:
+
+h[k] = h[N−1−k]
+
+This reduces multiplier usage from 12 to 6 by pre-adding symmetric input samples before multiplication.
+
+## Project Structure
+
+```text
 ├── src/
-│   └── symmetricFIR.v             ← RTL design
+│   └── symmetricFIR.v
 ├── test/
-│   └── symmetricFIR_tb.v          ← Self-checking testbench
+│   └── symmetricFIR_tb.v
 ├── docs/
-│   ├── MTECH_THESIS_BLUEPRINT.md  ← Full thesis guide
-│   ├── time_domain_signals.png
-│   └── frequency_response.png
-└── symmetric_FIR_Filter.xpr       ← Vivado project
+│   ├── waveforms
+│   ├── synthesis_reports
+│   └── screenshots
+├── generate_noisy_signal.py
+├── coeff_val.txt
+├── input_signal.txt
+├── filtered_signal.txt
+└── README.md
 ```
 
----
+## Verification Flow
 
-## End-to-End Flow
+1. Python generates noisy test signals.
+2. Golden FIR outputs are computed.
+3. Test vectors are exported.
+4. Verilog testbench loads vectors.
+5. RTL outputs are compared against golden outputs.
+6. PASS/FAIL results are reported automatically.
 
-```
-Configure signal → Python generates vectors → Testbench loads files
-       → RTL symmetric FIR → Compare with golden → PASS/FAIL report
-```
+## Test Signals
 
-### Filter definition
+The filter was evaluated using:
 
-| Parameter | Value |
-|-----------|-------|
-| Unique coefficients | `[2, 14, 7, 28, 15, 32]` |
-| Full 12-tap impulse response | `[2,14,7,28,15,32,32,15,28,7,14,2]` |
-| COEFF_SUM | 196 |
-| Input width | 12-bit signed |
-| Coefficient width | 8-bit signed |
-| Output scaling | `(accum + 98) / 196` with saturation |
+* Sine Wave
+* Sawtooth Wave
+* Square Wave
+* Chirp Signal
+* Pulse Signal
+* Triangular Signal
+* Composite Signals
 
----
+## Tools Used
 
-## Quick Start
+* Verilog HDL
+* Python
+* Xilinx Vivado
+* XSim Simulator
+* FPGA Design Flow
 
-### 1. Python environment
+## Results
 
-```bash
-cd symmetric_FIR_Filter
-python3 -m venv .venv
-source .venv/bin/activate   # Windows: .venv\Scripts\activate
-pip install -r requirements.txt
-```
+The RTL implementation matched the Python reference model with zero observed output error during functional verification.
 
-### 2. Generate test vectors
+Key evaluations include:
 
-Interactive:
+* Behavioral Simulation
+* Resource Utilization
+* Timing Analysis
+* Power Analysis
+* Design Rule Check (DRC)
+* FPGA Floorplanning
 
-```bash
-python generate_noisy_signal.py --interactive
-```
+## Future Improvements
 
-Non-interactive (recommended for reproducible thesis results):
+* Hardware deployment on FPGA board
+* AXI Stream integration
+* UART-based coefficient loading
+* Runtime coefficient updates
+* Comparison with direct-form FIR architectures
+* Polyphase and multirate filter extensions
 
-```bash
-python generate_noisy_signal.py \
-  --sample-rate 1000 \
-  --signal-freq 10 \
-  --noise 0.2 \
-  --num-samples 1000 \
-  --signal-type sine \
-  --output-dir . \
-  --docs-dir docs
-```
+## Author
 
-Outputs: `coeff_val.txt`, `input_signal.txt`, `filtered_signal.txt`, `sim_config.txt`, plots in `docs/`.
-
-### 3. Vivado simulation
-
-1. Open `symmetric_FIR_Filter.xpr`
-2. Ensure sources point to `src/symmetricFIR.v` and `test/symmetricFIR_tb.v`
-3. Copy vector files into the simulation working directory (`xsim/`) if needed
-4. Run **Behavioral Simulation**
-5. Check console for `RESULT: PASS` or `RESULT: FAIL`
-6. Inspect `rtl_output_log.txt` for per-sample comparison
-
----
-
-## What Changed (Thesis-Ready Improvements)
-
-| Item | Before | After |
-|------|--------|-------|
-| Python model | 6-tap float convolution | 12-tap symmetric integer model |
-| Coefficient scaling | Mismatch with RTL | Shared `COEFF_SUM=196` |
-| Sample rate | Ignored | Used in time axis |
-| Testbench | Waveform only | Self-checking PASS/FAIL |
-| RTL output | Wide unscaled sum | 12-bit scaled + `filtered_valid` |
-| Documentation | None in repo | README + thesis blueprint |
-
----
-
-## M.Tech Thesis Deliverables Checklist
-
-Use `docs/MTECH_THESIS_BLUEPRINT.md` as your master plan. Minimum submission set:
-
-- [ ] Dissertation PDF (80–120 pages typical for M.Tech)
-- [ ] RTL + testbench source code
-- [ ] Python reference scripts
-- [ ] Simulation PASS log + waveform screenshots
-- [ ] Synthesis report (LUT/FF/DSP, Fmax)
-- [ ] Frequency response and time-domain plots
-- [ ] Error analysis table (max error, RMSE, SNR improvement)
-
----
-
-## Known Next Steps for Full M.Tech Submission
-
-1. Run Vivado **Synthesis + Implementation** on target FPGA (Artix-7 / Zynq)
-2. Add resource utilization and timing tables to thesis
-3. Compare symmetric FIR vs direct-form FIR (area/latency trade-off)
-4. Optional: FPGA top with BRAM ROM + UART streaming interface
-
-See `docs/MTECH_THESIS_BLUEPRINT.md` for the long-term plan.
-
-**Thesis deadline package (start here):**
-- `SUBMISSION_CHECKLIST.md` — 10-day sprint to 3 June
-- `thesis/00_THESIS_MASTER.md` — copy-paste chapter drafts
-- `docs/viva/VIVA_QA.md` — viva answers
-- `docs/README.md` — where to put screenshots
-
----
-
-## Viva Summary (30 seconds)
-
-> Python generates deterministic test vectors using a 12-tap symmetric integer FIR model. Verilog RTL exploits coefficient symmetry to reduce multipliers, applies fixed-point scaling by 196, and is verified in Vivado with an automated golden-reference testbench. Future work includes FPGA synthesis and resource-optimized comparison with direct-form architectures.
+Satyam Kumar
